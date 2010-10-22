@@ -30,11 +30,19 @@ map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 
+let mapleader = ","
+
+"open the vimrc file
+nmap <leader>v :tabedit $MYVIMRC<CR>
+
 "edit files from the directory of the current file
-map ,ew :e <C-R>=expand("%:p:h") . "/" <CR>
-map ,es :sp <C-R>=expand("%:p:h") . "/" <CR>
-map ,ev :vsp <C-R>=expand("%:p:h") . "/" <CR>
-map ,et :tabe <C-R>=expand("%:p:h") . "/" <CR>
+map <leader>ew :e <C-R>=expand("%:p:h") . "/" <CR>
+map <leader>es :sp <C-R>=expand("%:p:h") . "/" <CR>
+map <leader>ev :vsp <C-R>=expand("%:p:h") . "/" <CR>
+map <leader>et :tabe <C-R>=expand("%:p:h") . "/" <CR>
+
+"format paragraphs without moving cursor
+nmap <leader>p mpgqip`p
 
 "automatically reloaded .vimrc
 map <silent> ,V :source ~/.vimrc<CR>:exe ":echo 'vimrc reloaded'"<CR>
@@ -69,4 +77,10 @@ function! ReloadSnippets( snippets_dir, ft )
 endfunction
 
 nmap ,rr :call ReloadSnippets(snippets_dir, &filetype)<CR>
+
+
+" Source the vimrc file after saving it
+if has("autocmd")
+  autocmd bufwritepost .vimrc source $MYVIMRC
+endif
 

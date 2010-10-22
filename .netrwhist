@@ -1,11 +1,2 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =9
-let g:netrw_dirhist_1='/Users/rauljara/Rails3/first_app/app'
-let g:netrw_dirhist_2='/Users/rauljara/Rails3/first_app/app/views/pages'
-let g:netrw_dirhist_3='/Users/rauljara/Rails3/first_app/app/views'
-let g:netrw_dirhist_4='/Users/rauljara/Rails3/first_app/app'
-let g:netrw_dirhist_5='/Users/rauljara/Rails3/first_app/app/helpers'
-let g:netrw_dirhist_6='/Users/rauljara/Rails3/first_app/app/views'
-let g:netrw_dirhist_7='/Users/rauljara/Rails3/first_app/config/environments'
-let g:netrw_dirhist_8='/Users/rauljara/Rails3/first_app/app/models'
-let g:netrw_dirhist_9='/Users/rauljara/Rails3/first_app/app'
+let g:netrw_dirhist_cnt =0
