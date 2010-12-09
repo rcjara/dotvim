@@ -1,4 +1,4 @@
-:colorscheme rjanotherdark
+colorscheme rjanotherdark
 
 :set autoindent
 :set smartindent
@@ -24,6 +24,9 @@ nmap <Space> i<Space><Esc>
 map <S-Enter> O<Esc>j
 map <CR> o<Esc>k
 
+"make Y so that it functions like D
+nmap Y y$
+
 "change between split windows
 map <C-h> <C-w>h
 map <C-j> <C-w>j
@@ -41,8 +44,12 @@ map <leader>es :sp <C-R>=expand("%:p:h") . "/" <CR>
 map <leader>ev :vsp <C-R>=expand("%:p:h") . "/" <CR>
 map <leader>et :tabe <C-R>=expand("%:p:h") . "/" <CR>
 
+"use par to format paragraphs
+:set formatprg=par\ 80q
+
 "format paragraphs without moving cursor
 nmap <leader>p mpgqip`p
+nmap <leader>l mp0gq$`p
 
 "automatically reloaded .vimrc
 map <silent> ,V :source ~/.vimrc<CR>:exe ":echo 'vimrc reloaded'"<CR>
