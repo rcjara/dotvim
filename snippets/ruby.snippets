@@ -14,6 +14,8 @@ snippet rb
 
 snippet req
 	require "${1}"${2}
+snippet rf
+	require File.dirname( File.expand_path( __FILE__) ) + "/${1:path}"
 snippet #
 	# =>
 snippet end
@@ -420,7 +422,7 @@ snippet tas
 	end
 
 snippet it
-	it "${1:should}" do
+	it "should ${1:do stuff}" do
 		${2}
 	end
 
