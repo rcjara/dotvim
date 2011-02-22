@@ -38,6 +38,7 @@ let mapleader = ","
 "open the vimrc file
 nmap <leader>v :tabedit $MYVIMRC<CR>
 
+
 "open the snippets folder for editing
 nmap <leader>s :tabedit ~/.vim/snippets/
 
