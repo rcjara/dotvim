@@ -10,6 +10,9 @@ set winminwidth=8
 
 :filetype plugin on
 
+"enable matchit plugin
+runtime macros/matchit.vim
+
 " Use the same symbols as TextMate for tabstops and EOLs
 set listchars=tab:▸\ ,eol:¬
 
@@ -20,9 +23,8 @@ set listchars=tab:▸\ ,eol:¬
 "Insert spaces without entering insert mode
 nmap <Space> i<Space><Esc>
 
-"insert lines above (or below) without entering insert mode
-map <S-Enter> O<Esc>j
-map <CR> o<Esc>k
+"insert lines or below without entering insert mode
+nmap <S-Enter> o<Esc>k
 
 "make Y so that it functions like D
 nmap Y y$
