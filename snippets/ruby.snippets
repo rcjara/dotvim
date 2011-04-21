@@ -425,7 +425,6 @@ snippet tas
 
 snippet it
 	it "should ${1:do stuff}" do
-		${2}
 	end
 
 snippet des
@@ -434,8 +433,7 @@ snippet des
 	end
 
 snippet bef
-	before(:each) do
-		${1}
+	before(${1::each}) do
 	end
 
 snippet cont
