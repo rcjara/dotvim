@@ -1,5 +1,8 @@
 colorscheme rjanotherdark
 
+"additional syntax files
+au BufRead,BufNewFile *.io set filetype=io
+
 :set autoindent
 :set smartindent
 :set list
@@ -94,6 +97,8 @@ endfunction
 
 nmap ,rr :call ReloadSnippets(snippets_dir, &filetype)<CR>
 
+"remove trailing whitespace
+autocmd BufWritePre * :%s/\s\+$//e
 
 " Source the vimrc file after saving it
 if has("autocmd")
