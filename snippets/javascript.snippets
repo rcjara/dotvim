@@ -12,6 +12,9 @@ snippet fun
 # Anonymous Function
 snippet f
 	function(${1}) {${2}};
+snippet fn
+	function(${1}) {
+	}
 # if
 snippet if
 	if (${1:true}) {${2}};
@@ -72,3 +75,12 @@ snippet get
 # Get Element
 snippet gett
 	getElementBy${1:Id}('${2}')${3}
+# jasmine suite
+snippet des
+	describe("${1:Description}", function() {
+	});
+snippet it
+	it("should ${1:dosomething}", function() {
+	});
+snippet exp
+	expect(${1:expression}).toEqual(${2:someValue});

@@ -8,6 +8,7 @@ au BufRead,BufNewFile *.scss set filetype=css
 :set smartindent
 :set list
 :set number
+:set ruler
 syntax on
 set ts=2 sts=2 sw=2 expandtab
 set winminwidth=8
@@ -58,7 +59,7 @@ map <leader>ev :vsp <C-R>=expand("%:p:h") . "/" <CR>
 map <leader>et :tabe <C-R>=expand("%:p:h") . "/" <CR>
 
 "use par to format paragraphs
-:set formatprg=par\ 70q
+:set formatprg=par\ 65q
 
 "format paragraphs without moving cursor
 nmap <leader>p mpgqip`p
