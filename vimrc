@@ -2,6 +2,7 @@ colorscheme rjanotherdark
 
 "additional syntax files
 au BufRead,BufNewFile *.io set filetype=io
+au BufRead,BufNewFile *.scss set filetype=css
 
 :set autoindent
 :set smartindent
@@ -57,7 +58,7 @@ map <leader>ev :vsp <C-R>=expand("%:p:h") . "/" <CR>
 map <leader>et :tabe <C-R>=expand("%:p:h") . "/" <CR>
 
 "use par to format paragraphs
-:set formatprg=par\ 80q
+:set formatprg=par\ 70q
 
 "format paragraphs without moving cursor
 nmap <leader>p mpgqip`p
