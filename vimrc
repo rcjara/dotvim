@@ -1,4 +1,4 @@
-colorscheme rjanotherdark
+colorscheme solarized
 
 "additional syntax files
 au BufRead,BufNewFile *.io set filetype=io
