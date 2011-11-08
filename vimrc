@@ -1,4 +1,3 @@
-set background=dark
 colorscheme solarized
 
 "additional syntax files

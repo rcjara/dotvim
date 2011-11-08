@@ -6,5 +6,14 @@ snippet fe
 snippet fv
 	forvalues ${1:i} = ${2:1}/${3:endvalue} {
 		${4}
-	} 
+	}
 
+snippet prog
+	capture program drop ${1:prog_name}
+	program define ${2:prog_name}
+	end
+
+snippet log
+	capture log close
+	log using "logs/${1:file_name}.txt", text replace
+	log close
