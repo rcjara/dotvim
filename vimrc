@@ -1,4 +1,5 @@
 colorscheme solarized
+set background=dark
 
 "additional syntax files
 au BufRead,BufNewFile *.io set filetype=io
@@ -85,6 +86,12 @@ map <D-8> 8gt
 map <D-9> 9gt
 map <D-0> :tablast<CR>
 
+" Heresy
+inoremap <c-a> <esc>I
+inoremap <c-e> <esc>A
+inoremap <c-w> <esc>lWi
+inoremap <c-b> <esc>Bi
+
 "reload snippets
 function! ReloadSnippets( snippets_dir, ft )
     if strlen( a:ft ) == 0
@@ -106,4 +113,53 @@ autocmd BufWritePre * :%s/\s\+$//e
 if has("autocmd")
   autocmd bufwritepost .vimrc source $MYVIMRC
 endif
+
+function! PulseCursorLine()
+    let current_window = winnr()
+
+    windo set nocursorline
+    execute current_window . 'wincmd w'
+
+    setlocal cursorline
+
+    redir => old_hi
+        silent execute 'hi CursorLine'
+    redir END
+    let old_hi = split(old_hi, '\n')[0]
+    let old_hi = substitute(old_hi, 'xxx', '', '')
+
+    hi CursorLine guibg=#2a2a2a ctermbg=233
+    redraw
+    sleep 20m
+
+    hi CursorLine guibg=#333333 ctermbg=235
+    redraw
+    sleep 20m
+
+    hi CursorLine guibg=#3a3a3a ctermbg=237
+    redraw
+    sleep 20m
+
+    hi CursorLine guibg=#444444 ctermbg=239
+    redraw
+    sleep 20m
+
+    hi CursorLine guibg=#3a3a3a ctermbg=237
+    redraw
+    sleep 20m
+
+    hi CursorLine guibg=#333333 ctermbg=235
+    redraw
+    sleep 20m
+
+    hi CursorLine guibg=#2a2a2a ctermbg=233
+    redraw
+    sleep 20m
+
+    execute 'hi ' . old_hi
+
+    windo set cursorline
+    execute current_window . 'wincmd w'
+endfunction
+
 
