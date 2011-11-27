@@ -49,6 +49,8 @@ nmap <leader>fn i<C-R>=expand("%:t")<CR><Esc>
 "open the vimrc file
 nmap <leader>v :tabedit $MYVIMRC<CR>
 
+"set a column to be thin (for file listings)
+map <leader>w <C-W>1000<<C-W>30>
 
 "open the snippets folder for editing
 nmap <leader>s :tabedit ~/.vim/snippets/
