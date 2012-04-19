@@ -7,6 +7,7 @@ au BufRead,BufNewFile *.scss set filetype=css
 
 :set autoindent
 :set smartindent
+:set autoread
 :set list
 :set number
 :set ruler
@@ -68,6 +69,8 @@ map <leader>et :tabe <C-R>=expand("%:p:h") . "/" <CR>
 nmap <leader>p mpgqip`p
 nmap <leader>l mp0gq$`p
 
+"coffeescript make
+nmap <leader>cm :w<CR>:silent CoffeeMake<CR>
 "automatically reloaded .vimrc
 map <silent> ,V :source ~/.vimrc<CR>:exe ":echo 'vimrc reloaded'"<CR>
 
