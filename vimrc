@@ -65,6 +65,15 @@ map <leader>et :tabe <C-R>=expand("%:p:h") . "/" <CR>
 "use par to format paragraphs
 :set formatprg=par\ 65q
 
+"delete matching parents, brackets, etc.
+nmap <leader>dm %x``x
+
+"create a block comment in stata
+nmap <leader>cc I* <Esc>A *<Esc>yyP:s/./*/g<CR>yyjp,cs
+
+"clear search
+nmap <leader>cs :let @/ = ""<CR>
+
 "format paragraphs without moving cursor
 nmap <leader>p mpgqip`p
 nmap <leader>l mp0gq$`p
