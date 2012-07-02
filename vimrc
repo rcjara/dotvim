@@ -8,8 +8,8 @@ au BufRead,BufNewFile *.scss set filetype=css
 :set autoindent
 :set smartindent
 :set autoread
+:set rnu
 :set list
-:set number
 :set ruler
 syntax on
 set ts=2 sts=2 sw=2 expandtab
