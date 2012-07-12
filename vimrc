@@ -14,6 +14,7 @@ au BufRead,BufNewFile *.scss set filetype=css
 syntax on
 set ts=2 sts=2 sw=2 expandtab
 set winminwidth=8
+set incsearch
 
 :filetype plugin on
 
@@ -65,8 +66,15 @@ map <leader>et :tabe <C-R>=expand("%:p:h") . "/" <CR>
 "use par to format paragraphs
 :set formatprg=par\ 65q
 
-"delete matching parents, brackets, etc.
-nmap <leader>dm %x``x
+"delete matching parens, brackets, etc.
+nmap <leader>dm m`%x``x
+"
+"wrap in parens, quotes, brackets, curly braces
+vmap <leader>w" xa""<Esc>P
+vmap <leader>w( xa()<Esc>P
+vmap <leader>w[ xa[]<Esc>P
+vmap <leader>w{ xa{}<Esc>P
+vmap <leader>w` xa`'<Esc>P
 
 "create a block comment in stata
 nmap <leader>cc I* <Esc>A *<Esc>yyP:s/./*/g<CR>yyjp,cs
