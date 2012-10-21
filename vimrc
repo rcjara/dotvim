@@ -2,7 +2,7 @@ colorscheme solarized
 set background=dark
 
 "pathogen
-call pathogen#infect()
+"call pathogen#infect()
 
 "additional syntax files
 au BufRead,BufNewFile *.io set filetype=io
