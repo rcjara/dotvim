@@ -1,4 +1,5 @@
-colorscheme solarized
+color codeschool
+
 set background=dark
 
 "pathogen
@@ -18,6 +19,9 @@ syntax on
 set ts=2 sts=2 sw=2 expandtab
 set winminwidth=8
 set incsearch
+
+" Always assume a 256 color terminal
+set t_Co=256
 
 :filetype plugin on
 
