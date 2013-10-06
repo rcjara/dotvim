@@ -20,8 +20,15 @@ set ts=2 sts=2 sw=2 expandtab
 set winminwidth=8
 set incsearch
 
+" jj to esc
+imap jj <Esc>
+
 " Always assume a 256 color terminal
 set t_Co=256
+
+"always show filename
+set modeline
+set ls=2
 
 :filetype plugin on
 
