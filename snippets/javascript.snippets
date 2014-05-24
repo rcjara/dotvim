@@ -84,3 +84,16 @@ snippet it
 	});
 snippet exp
 	expect(${1:expression}).toEqual(${2:someValue});
+
+snippet def
+	define([${1:files}],
+	function(${2:vars}) {
+		var klass = function() {
+		};
+
+		return klass;
+	});
+
+snippet pro
+	klass.prototype.${1:fnName} = function(${2:args}) {
+	};
