@@ -51,6 +51,9 @@ nmap <S-Enter> o<Esc>k
 "make Y so that it functions like D
 nmap Y y$
 
+"quit and save with just Z
+nmap Z ZZ
+
 "change between split windows
 map <C-h> <C-w>h
 map <C-j> <C-w>j
@@ -94,7 +97,7 @@ vmap <leader>w` xa`'<Esc>P
 nmap <leader>cc I* <Esc>A *<Esc>yyP:s/./*/g<CR>yyjp,cs
 
 "clear search
-nmap <leader>cs :let @/ = ""<CR>
+nmap <leader>cx :let @/ = ""<CR>
 
 "format paragraphs without moving cursor
 nmap <leader>p mpgqip`p
