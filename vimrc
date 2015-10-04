@@ -38,8 +38,8 @@ runtime macros/matchit.vim
 " Use the same symbols as TextMate for tabstops and EOLs
 set listchars=tab:▸\ ,eol:¬
 
-"search highlighting and ignore case
-:set ic
+"search highlighting and smart case
+:set smartcase
 :set hls
 
 "Insert spaces without entering insert mode
@@ -61,6 +61,12 @@ map <C-k> <C-w>k
 map <C-l> <C-w>l
 
 let mapleader = ","
+
+"ocaml build
+nmap <leader>mm :w<CR>:!write-cmd bld "./build.rb %"<CR>
+nmap <leader>mn :w<CR>:!write-cmd bld "./build_run.rb %"<CR>
+nmap <leader>mt :w<CR>:!write-cmd bld "./build.rb -run-tests %"<CR>
+
 
 "insert filename
 nmap <leader>fn i<C-R>=expand("%:t")<CR><Esc>
@@ -92,9 +98,6 @@ vmap <leader>w( xa()<Esc>P
 vmap <leader>w[ xa[]<Esc>P
 vmap <leader>w{ xa{}<Esc>P
 vmap <leader>w` xa`'<Esc>P
-
-"create a block comment in stata
-nmap <leader>cc I* <Esc>A *<Esc>yyP:s/./*/g<CR>yyjp,cs
 
 "clear search
 nmap <leader>cx :let @/ = ""<CR>
