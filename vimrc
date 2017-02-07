@@ -1,6 +1,12 @@
-color codeschool
+"" Colors
+" Always assume a 256 color terminal
+set t_Co=256
 
-set background=dark
+"replace all occurences in line
+:set gdefault
+
+"ignore case during search
+:set smartcase
 
 "pathogen
 call pathogen#infect()
@@ -22,9 +28,6 @@ set incsearch
 
 " jj to esc
 imap jj <Esc>
-
-" Always assume a 256 color terminal
-set t_Co=256
 
 "always show filename
 set modeline
@@ -81,10 +84,11 @@ map <leader>w <C-W>1000<<C-W>30>
 nmap <leader>s :tabedit ~/.vim/snippets/
 
 "edit files from the directory of the current file
-map <leader>ew :e <C-R>=expand("%:p:h") . "/" <CR>
-map <leader>es :sp <C-R>=expand("%:p:h") . "/" <CR>
-map <leader>ev :vsp <C-R>=expand("%:p:h") . "/" <CR>
-map <leader>et :tabe <C-R>=expand("%:p:h") . "/" <CR>
+nmap <leader>ew :e <C-R>=expand("%:p:h") . "/" <CR>
+nmap <leader>es :sp <C-R>=expand("%:p:h") . "/" <CR>
+nmap <leader>ev :vsp <C-R>=expand("%:p:h") . "/" <CR>
+nmap <leader>ef :vsp <C-R><C-P><CR>
+nmap <leader>et :tabe <C-R>=expand("%:p:h") . "/" <CR>
 
 "use par to format paragraphs
 :set formatprg=par\ 65q
