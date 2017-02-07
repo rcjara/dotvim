@@ -87,6 +87,13 @@ map <leader>w <C-W>1000<<C-W>30>
 "open the snippets folder for editing
 nmap <leader>s :tabedit ~/.vim/snippets/
 
+" spelling
+" enable / disable
+nmap <leader>se :setlocal spell spelllang=en_us<CR>
+nmap <leader>sd :setlocal spell spelllang=<CR>
+" fix with most likely word
+nmap <leader>sf 1z=
+
 "edit files from the directory of the current file
 nmap <leader>ew :e <C-R>=expand("%:p:h") . "/" <CR>
 nmap <leader>es :sp <C-R>=expand("%:p:h") . "/" <CR>
