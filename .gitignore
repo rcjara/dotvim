@@ -1,4 +1,4 @@
 *.sw*
 .netrwhist
 spell/*
-
+.DS_Store
