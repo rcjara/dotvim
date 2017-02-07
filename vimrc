@@ -2,6 +2,10 @@
 " Always assume a 256 color terminal
 set t_Co=256
 
+color sialoquentrj
+
+set background=light
+
 "replace all occurences in line
 :set gdefault
 
