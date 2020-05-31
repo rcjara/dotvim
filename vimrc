@@ -53,8 +53,8 @@ set listchars=tab:▸\ ,eol:¬
 "Insert spaces without entering insert mode
 nmap <Space> i<Space><Esc>
 
-"insert lines or below without entering insert mode
-nmap <S-Enter> o<Esc>k
+"save on
+nnoremap <CR> :w<CR>
 
 "make Y so that it functions like D
 nmap Y y$
