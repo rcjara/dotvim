@@ -22,6 +22,7 @@ au BufRead,BufNewFile *.scss set filetype=css
 :set autoindent
 :set smartindent
 :set autoread
+:set nu
 :set rnu
 :set list
 :set ruler
@@ -100,6 +101,11 @@ nmap <leader>es :sp <C-R>=expand("%:p:h") . "/" <CR>
 nmap <leader>ev :vsp <C-R>=expand("%:p:h") . "/" <CR>
 nmap <leader>ef :vsp <C-R><C-P><CR>
 nmap <leader>et :tabe <C-R>=expand("%:p:h") . "/" <CR>
+
+"fzf config
+let g:fzf_preview_window = 'up:50%'
+nnoremap <leader>tf :Files!<CR>
+nnoremap <leader>tr :Rg!<Space>
 
 "use par to format paragraphs
 :set formatprg=par\ 65q
