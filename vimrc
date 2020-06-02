@@ -225,4 +225,5 @@ function! PulseCursorLine()
     execute current_window . 'wincmd w'
 endfunction
 
-
+" separate out distinct configs
+source ~/.vim/coc-config.vim
