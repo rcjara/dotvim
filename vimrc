@@ -16,8 +16,12 @@ set background=light
 call pathogen#infect()
 
 "additional syntax files
-au BufRead,BufNewFile *.io set filetype=io
-au BufRead,BufNewFile *.scss set filetype=css
+autocmd BufRead,BufNewFile *.io set filetype=io
+autocmd BufRead,BufNewFile *.scss set filetype=css
+autocmd BufRead,BufNewFile *.scss set filetype=rust
+
+"formatting on save
+autocmd BufWritePre *.rs :%!rustfmt
 
 :set autoindent
 :set smartindent
