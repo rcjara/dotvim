@@ -21,7 +21,9 @@ autocmd BufRead,BufNewFile *.scss set filetype=css
 autocmd BufRead,BufNewFile *.scss set filetype=rust
 
 "formatting on save
-autocmd BufWritePre *.rs :%!rustfmt
+"the normal mode commands are to prevent sthe cursor from jumping around
+"to do : replace this with a format plug-in
+autocmd BufWritePre *.rs execute ":normal! mg" | execute ":%!rustfmt" | execute ":normal! `g"
 
 :set autoindent
 :set smartindent
