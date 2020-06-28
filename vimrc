@@ -21,9 +21,7 @@ autocmd BufRead,BufNewFile *.scss set filetype=css
 autocmd BufRead,BufNewFile *.scss set filetype=rust
 
 "formatting on save
-"the normal mode commands are to prevent sthe cursor from jumping around
-"to do : replace this with a format plug-in
-autocmd BufWritePre *.rs execute ":normal! mg" | execute ":%!rustfmt" | execute ":normal! `g"
+let g:rustfmt_autosave = 1
 
 :set autoindent
 :set smartindent
@@ -135,8 +133,6 @@ nmap <leader>l mp0gq$`p
 
 "coffeescript make
 nmap <leader>cm :w<CR>:silent CoffeeMake<CR>
-"automatically reloaded .vimrc
-map <silent> ,V :source ~/.vimrc<CR>:exe ":echo 'vimrc reloaded'"<CR>
 
 "set window width to something reasonable, but not gigantic
 map <C-\> 85<C-w><Bar>
@@ -173,7 +169,11 @@ function! ReloadSnippets( snippets_dir, ft )
     call GetSnippets( a:snippets_dir, filetype )
 endfunction
 
-nmap ,rr :call ReloadSnippets(snippets_dir, &filetype)<CR>
+" Reloads
+" snippets
+nnoremap <leader>rr :call ReloadSnippets(snippets_dir, &filetype)<CR>:exe ":echo 'snippets reloaded'"<CR>
+" vimrc
+nnoremap <leader>rv :source ~/.vimrc<CR>:exe ":echo 'vimrc reloaded'"<CR>
 
 "remove trailing whitespace
 autocmd BufWritePre * :%s/\s\+$//e
